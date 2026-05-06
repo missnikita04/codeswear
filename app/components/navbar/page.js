@@ -121,13 +121,22 @@ const Navbar = () => {
     </div>
   </li>
 
-</ol>   
+</ol> 
+
+  <div className="flex gap-3">
  <button
-      className=" flex items-center justify-center px-12 py-3 mt-16 m-auto bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-xl shadow-md transition-all duration-200 active:scale-95"
+      className=" flex items-center justify-center px-8 py-3 mt-16 m-auto bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-xl shadow-md transition-all duration-200 active:scale-95"
     >
       <IoBagCheck className="text-xl mx-1" />
       Check Out
     </button>
+     <button
+      className=" flex items-center justify-center mt-16 px-12 py-3 m-auto bg-white hover:bg-pink-600 text-pink-500 hover:text-white font-semibold rounded-xl shadow-md transition-all duration-200 active:scale-95 "
+    >
+     
+      Clear Cart
+    </button></div>
+
      </div>
     </div>
   );
