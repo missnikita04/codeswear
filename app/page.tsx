@@ -1,6 +1,4 @@
 import Head from "next/dist/shared/lib/head";
-import Navbar from "./components/navbar/page";
-import Footer from "./components/footer/page";
 export default function TestComponent() {
   return (
    <>
@@ -11,7 +9,7 @@ export default function TestComponent() {
     <meta name="description" content="CodesWear.com -Wear the code"/>
     <link rel="icon" href="/favicon.ico" />
      </Head>
-     <Navbar/>
+    
      <div>
       <img src="/images/HOME.webp" alt="" />
      </div>
@@ -99,7 +97,7 @@ export default function TestComponent() {
 
 
 
-      <Footer/>
+    
    </div>
    </>
   );
