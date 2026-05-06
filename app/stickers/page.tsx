@@ -1,14 +1,14 @@
 import Link from "next/link";
 import React from "react";
 
-const Tshirt = () => {
+const Stickers = () => {
   const products = Array(8).fill({
     title: "Wear the Code",
     category: "Hoodies",
     price: "₹499.00",
     sizes: "S, M, L, XL",
     image:
-      "https://m.media-amazon.com/images/I/71PlojKOn2L._SX679_.jpg",
+      "https://m.media-amazon.com/images/I/61KqQVsHE6L._AC_UL320_.jpg",
     slug: "wear-the-code",
   });
 
@@ -18,9 +18,9 @@ const Tshirt = () => {
         
         {/* Page Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900">Tshirts Collection</h1>
+          <h1 className="text-4xl font-bold text-gray-900">Stickers Collection</h1>
           <p className="mt-2 text-gray-500">
-            Tshirts from codesWear
+            Stickers from codesWear
           </p>
         </div>
 
@@ -65,4 +65,4 @@ const Tshirt = () => {
   );
 };
 
-export default Tshirt;
+export default Stickers;
