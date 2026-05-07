@@ -7,7 +7,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoClose, IoBagCheck } from "react-icons/io5";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { motion } from "framer-motion";
-import { CartContext } from "../../../app/context/cartContext/page";
+import { CartContext } from "../../app/context/cartContext/page";
 import toast from "react-hot-toast";
 import { MdAccountCircle } from "react-icons/md";
 

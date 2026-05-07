@@ -1,7 +1,7 @@
 // app/signup/page.js
 
 import Link from "next/link";
-import SignupForm from "../components/signupform/page";
+import SignupForm from "../../components/signupForm/page";
 
 const SignupPage = () => {
   return (

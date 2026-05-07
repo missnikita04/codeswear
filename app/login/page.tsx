@@ -1,7 +1,7 @@
 // app/login/page.js
 
 import Link from "next/link";
-import LoginForm from "../components/loginfrom/page";
+import LoginForm from "../../components/loginfrom/page";
 
 export default function LoginPage() {
   return (

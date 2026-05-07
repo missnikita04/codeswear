@@ -1,6 +1,6 @@
 import './globals.css'
-import Navbar from './components/navbar/page' 
-import Footer from './components/footer/page'
+import Navbar from '../components/navbar/page' 
+import Footer from '../components/footer/page'
 import {CartProvider} from '../app/context/cartContext/page'
 import { Toaster } from "react-hot-toast";
 export default function RootLayout({
