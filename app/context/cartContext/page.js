@@ -13,11 +13,13 @@ export const CartProvider = ({ children }) => {
       const storedCart = localStorage.getItem("cart");
       if (storedCart) {
         setCart(JSON.parse(storedCart));
+        saveCart(JSON.parse(storedCart));
       }
     } catch (error) {
       console.log(error);
       localStorage.clear();
     }
+   
   }, []);
 
   const saveCart = (newCart) => {
