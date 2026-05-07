@@ -1,7 +1,13 @@
 "use client";
 import React, { useState } from "react";
-
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext/page";
+import {useParams} from "next/navigation"
 const SLug = () => {
+  const params=useParams();
+  const slug=params.slug;
+
+  const {addToCart}=useContext(CartContext)
   const [pin, setPin] = useState("");
   const [service, setService] = useState();
 
@@ -176,8 +182,9 @@ const SLug = () => {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ₹499.00
                 </span>
-                <button className="flex ml-8 text-white bg-pink-500 border-0 md:text-lg text-sm py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">
-                  Add to Cart
+                <button onClick={() => addToCart(slug,1,499,"wear the code(XL, Red","XL","Red")} className="flex ml-8 text-white bg-pink-500 border-0 md:text-lg text-sm py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">
+                  
+                  {}
                 </button>
                 <button className="flex ml-4 text-white md:text-lg text-sm bg-pink-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">
                   Buy Now

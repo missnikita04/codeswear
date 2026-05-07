@@ -8,9 +8,11 @@ import { IoClose } from "react-icons/io5";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { IoBagCheck } from "react-icons/io5";
-
-
+import { useContext } from "react";
+import { CartContext } from "../../../app/context/cartContext/page";
 const Navbar = () => {
+const {cart,addToCart, removeFromCart,clearCart,subTotal} = useContext(CartContext);
+console.log(cart,subTotal);
   const ref = useRef(null);
 
   const toggleCart = () => {
@@ -80,46 +82,34 @@ const Navbar = () => {
         </div>
 
 <ol className="list-decimal space-y-4 font-semibold">
-  
-  <li className="flex items-center justify-between my-5">
-    
-    {/* PRODUCT NAME */}
-    <div className="w-2/3 font-semibold">
-      tshirt - Wear the Code
-    </div>
+{Object.keys(cart).length === 0 && (
+  <div className="my-6 text-center bg-pink-50 border border-pink-200 rounded-xl p-6 shadow-sm">
+    <h2 className="text-lg font-semibold text-pink-600">
+      Your cart is empty
+    </h2>
+    <p className="text-sm text-gray-600 mt-2 italic">
+      Please add a few items to continue to checkout.
+    </p>
+  </div>
+)}
+  {Object.keys(cart).map((k) => {
+    return (
+      <li key={k} className="flex items-center justify-between my-5" >
+      
+      {/* PRODUCT NAME */}
+      <div className="w-2/3 font-semibold">
+        {cart[k].name}
+      </div>
 
     {/* QUANTITY CONTROLS */}
     <div className="w-1/3 flex items-center justify-center gap-3 text-lg text-pink-700">
-      <CiCircleMinus className="cursor-pointer hover:text-pink-900" />
-      <span className="mx-2">1</span>
-      <CiCirclePlus className="cursor-pointer hover:text-pink-900" />
+      <CiCircleMinus onClick={()=>{ removeFromCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className="cursor-pointer hover:text-pink-900" />
+      <span className="mx-2"> {cart[k].qty}</span>
+      <CiCirclePlus onClick={()=>{ addToCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className="cursor-pointer hover:text-pink-900" />
     </div>
 
   </li>
-
-  <li className="flex items-center justify-between my-5">
-    <div className="w-2/3 font-semibold">
-      tshirt - Wear the Code
-    </div>
-
-    <div className="w-1/3 flex items-center justify-center gap-3 text-lg text-pink-700">
-      <CiCircleMinus className="cursor-pointer hover:text-pink-900" />
-      <span className="mx-2">1</span>
-      <CiCirclePlus className="cursor-pointer hover:text-pink-900" />
-    </div>
-  </li>
-
-  <li className="flex items-center justify-between my-5">
-    <div className="w-2/3 font-semibold">
-      tshirt - Wear the Code
-    </div>
-
-    <div className="w-1/3 flex items-center justify-center gap-3 text-lg text-pink-700">
-      <CiCircleMinus className="cursor-pointer hover:text-pink-900" />
-      <span className="mx-2">1</span>
-      <CiCirclePlus className="cursor-pointer hover:text-pink-900" />
-    </div>
-  </li>
+ ) })}
 
 </ol> 
 
@@ -131,6 +121,7 @@ const Navbar = () => {
       Check Out
     </button>
      <button
+     onClick={clearCart}
       className=" flex items-center justify-center mt-16 px-12 py-3 m-auto bg-white hover:bg-pink-600 text-pink-500 hover:text-white font-semibold rounded-xl shadow-md transition-all duration-200 active:scale-95 "
     >
      
