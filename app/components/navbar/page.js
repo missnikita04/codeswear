@@ -9,6 +9,7 @@ import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { motion } from "framer-motion";
 import { CartContext } from "../../../app/context/cartContext/page";
 import toast from "react-hot-toast";
+import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = () => {
   const { cart, addToCart, removeFromCart, clearCart, subTotal } =
@@ -78,9 +79,12 @@ const Navbar = () => {
           <Link href="/mugs">Mugs</Link>
         </div>
 
+
+
         {/* CART ICON */}
-        <div onClick={toggleCart} className="relative cursor-pointer">
-          <FaShoppingCart className="text-2xl text-pink-500" />
+        <div  className=" flex relative cursor-pointer">
+          <Link href="/login"><MdAccountCircle className="text-2xl text-gray-500 mx-4"  /></Link>
+          <FaShoppingCart onClick={toggleCart} className="text-2xl text-pink-500" />
 
           {cartCount > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 rounded-full">
